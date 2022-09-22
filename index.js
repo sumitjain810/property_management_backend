@@ -32,7 +32,7 @@ app.post("/saveProperty", async (req, res) => {
 
 app.post("/deleteProperty", async (req, res) => {
 	console.log("Delete Request: ", req.body)
-	await airtable.delete('recL3tp8V8hgPV9oV').then((resp) => {
+	await airtable.delete(req.body.id).then((resp) => {
 		console.log(resp);
 		res.json({ message: resp });
 	});	
